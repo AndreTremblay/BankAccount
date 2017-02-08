@@ -28,7 +28,7 @@ public Transactions() {
 //Track account Balance
 		Balance = 0;
 		try {
-			br = new BufferedReader(new FileReader("C:\\Users\\Rakkir\\workspace\\BankAccount\\log.html"));
+			br = new BufferedReader(new FileReader("log.html"));
 			String nextLine;
 			double next;
 			while ((nextLine = br.readLine()) != null) {
@@ -91,7 +91,7 @@ public void compute(String hold) {
 				String lineSource;
 				String holdLine;
 				String lastLine = "";
-				BufferedReader brSource = new BufferedReader(new FileReader("C:\\Users\\Rakkir\\workspace\\BankAccount\\log.html"));
+				BufferedReader brSource = new BufferedReader(new FileReader("log.html"));
 				while ((lineSource = brSource.readLine()) != null) {
 					writer.println(lineSource);
 					if (lineSource.contains(("transactions")) == true) {
@@ -117,8 +117,8 @@ public void compute(String hold) {
 				writer.close();
 				
 				//replace the old log with the new log
-				File p1 = new File("C:\\Users\\Rakkir\\workspace\\BankAccount\\log.html");
-				File p2 = new File("C:\\Users\\Rakkir\\workspace\\BankAccount\\newlog.html");
+				File p1 = new File("log.html");
+				File p2 = new File("newlog.html");
 				p2.renameTo(p1);
 				p1.delete();
 				p2.renameTo(p1);
@@ -184,7 +184,7 @@ public void compute(String hold) {
 					
 					//read in the file
 					//write the new file
-					BufferedReader brSource = new BufferedReader(new FileReader("C:\\Users\\Rakkir\\workspace\\BankAccount\\log.html"));
+					BufferedReader brSource = new BufferedReader(new FileReader("log.html"));
 					while ((lineSource = brSource.readLine()) != null) {
 						writer.println(lineSource);
 						if (lineSource.contains(("transactions")) == true) {
@@ -210,8 +210,8 @@ public void compute(String hold) {
 					writer.close();
 					
 					//delete old log, rename new log
-					File p1 = new File("C:\\Users\\Rakkir\\workspace\\BankAccount\\log.html");
-					File p2 = new File("C:\\Users\\Rakkir\\workspace\\BankAccount\\newlog.html");
+					File p1 = new File("log.html");
+					File p2 = new File("newlog.html");
 					p2.renameTo(p1);
 					p1.delete();
 					p2.renameTo(p1);
@@ -242,7 +242,7 @@ public void compute(String hold) {
 		try {
 			
 			//read the balance in the current log file
-			br = new BufferedReader(new FileReader("C:\\Users\\Rakkir\\workspace\\BankAccount\\log.html"));
+			br = new BufferedReader(new FileReader("log.html"));
 			String nextLine;
 			double next;
 			
